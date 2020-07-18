@@ -51,7 +51,7 @@ exports.updateProjectById = async (req, res) => {
     const updateProject = await Project.update(req.params.id, req.body);
     res.status(200).json({
       status: "success",
-      project: {...req.body}
+      project: updateProject
     });
   }
   catch(err) {

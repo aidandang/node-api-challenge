@@ -1,9 +1,15 @@
 const express = require('express');
 const actionController = require('../controllers/actionController');
+const actionValidator = require('../middleware/actionValidator');
 const router = express.Router();
 
 router
-  .route('/')
-  .get(actionController.readActions);
+  .route('/:id')
+  .get(actionValidator.validateActionId, actionController.readActionById)
+  .put(actionController.updateActionById);
 
+router
+  .route('/')
+  .post(actionController.createAction);
+    
 module.exports = router;
