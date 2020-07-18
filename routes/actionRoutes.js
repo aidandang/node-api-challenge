@@ -6,11 +6,11 @@ const router = express.Router();
 router
   .route('/:id')
   .get(actionValidator.validateActionId, actionController.readActionById)
-  .put(actionController.updateActionById)
-  .delete(actionController.deleteActionById);
+  .put(actionValidator.validateAction, actionController.updateActionById)
+  .delete(actionValidator.validateActionId, actionController.deleteActionById);
 
 router
   .route('/')
-  .post(actionController.createAction);
+  .post(actionValidator.validateActionWithValidProjectId, actionController.createAction);
 
 module.exports = router;

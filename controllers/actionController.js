@@ -10,7 +10,7 @@ exports.readActionById = (req, res) => {
 exports.updateActionById = async (req, res) => {
   try {
     const updateAction = await Action.update(req.params.id, req.body);
-    res.status(200).json({
+    res.status(204).json({
       status: "success",
       action: updateAction
     });
