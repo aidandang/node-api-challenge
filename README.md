@@ -40,13 +40,31 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+ANSWER: 
+- Side-server routing with Express which to use the routing feature of Express to build several endpoints.
+- Express Middleware We can use Express Middleware to add features to Express. It is the biggest part of Express, most of the code we write, including route handlers, is middleware under the hood.
+
 - [ ] Describe Middleware?
+
+ANSWER:
+- middleware is like a stack of functions that get executed in the order they are introduced into the server code.
+- There are different types of middleware; for our purposes, we’ll group them into: built-in middleware comes with installed Express, third-party middleware built by other developers and installed using Nam, custom middleware developed by ourself.
+
 
 - [ ] Describe a Resource?
 
+ANSWER:
+In RESTful Web API architecture everything is a resource. Each resource is accessible via a unique URI. Resources can have multiple representations and resource management happens via HTTP methods.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+ANSWER:
+When the API return with status code start with 2xx such as 200 in GET request or 201 in POST request.
+
 - [ ] How can we partition our application into sub-applications?
+
+ANSWER:
+Using Express routers is a way to split an application into sub-applications to make it more modular and easier to maintain and reason about.
 
 ## Minimum Viable Product
 
